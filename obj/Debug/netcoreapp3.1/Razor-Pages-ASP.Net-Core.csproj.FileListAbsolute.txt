@@ -1,0 +1,8 @@
+C:\Users\mparameswaran\Documents\GitHub\Razor-Pages-ASP.Net-Core\obj\Debug\netcoreapp3.1\Razor-Pages-ASP.Net-Core.csproj.AssemblyReference.cache
+C:\Users\mparameswaran\Documents\GitHub\Razor-Pages-ASP.Net-Core\obj\Debug\netcoreapp3.1\Razor-Pages-ASP.Net-Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mparameswaran\Documents\GitHub\Razor-Pages-ASP.Net-Core\obj\Debug\netcoreapp3.1\Razor-Pages-ASP.Net-Core.AssemblyInfoInputs.cache
+C:\Users\mparameswaran\Documents\GitHub\Razor-Pages-ASP.Net-Core\obj\Debug\netcoreapp3.1\Razor-Pages-ASP.Net-Core.AssemblyInfo.cs
+C:\Users\mparameswaran\Documents\GitHub\Razor-Pages-ASP.Net-Core\obj\Debug\netcoreapp3.1\Razor-Pages-ASP.Net-Core.csproj.CoreCompileInputs.cache
+C:\Users\mparameswaran\Documents\GitHub\Razor-Pages-ASP.Net-Core\obj\Debug\netcoreapp3.1\Razor-Pages-ASP.Net-Core.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\mparameswaran\Documents\GitHub\Razor-Pages-ASP.Net-Core\obj\Debug\netcoreapp3.1\Razor-Pages-ASP.Net-Core.RazorAssemblyInfo.cache
+C:\Users\mparameswaran\Documents\GitHub\Razor-Pages-ASP.Net-Core\obj\Debug\netcoreapp3.1\Razor-Pages-ASP.Net-Core.RazorAssemblyInfo.cs
