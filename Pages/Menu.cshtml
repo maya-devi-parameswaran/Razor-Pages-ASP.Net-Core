@@ -1,0 +1,22 @@
+﻿@page
+@model Razor_Pages_ASP.Net_Core.Pages.MenuModel
+<div class="row">
+    @foreach(var i in Model.Menu)
+    {
+         <div class="col-lg-4 col-sm-6 portfolio-item">
+            <div class="card h-100">
+                <a href="/item"><img class="card-img-top" src="~/images/menu/@i.ImageFile" alt=""></a>
+                <div class="card-body">
+                    <h4 class="card-title">
+                        <a class="color-main" href="#">@i.Name</a>
+                    </h4>
+                    <p class="card-text">@i.Summary</p>
+                </div>
+                <div class="card-footer">
+                    <a href="/item" class="btn btn-success w-100">Details & Nutrition</a>
+                </div>
+            </div>
+        </div>
+    }
+   
+</div>
