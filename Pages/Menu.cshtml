@@ -1,11 +1,11 @@
-﻿@page
+﻿@page "/test"
 @model Razor_Pages_ASP.Net_Core.Pages.MenuModel
 <div class="row">
     @foreach(var i in Model.Menu)
     {
          <div class="col-lg-4 col-sm-6 portfolio-item">
             <div class="card h-100">
-                <a href="/item"><img class="card-img-top" src="~/images/menu/@i.ImageFile" alt=""></a>
+                <a href="/item"><img class="card-img-top" src="~/images/menu/@i.ImageFile" asp-append-version="true" alt=""></a>
                 <div class="card-body">
                     <h4 class="card-title">
                         <a class="color-main" href="#">@i.Name</a>
@@ -13,7 +13,7 @@
                     <p class="card-text">@i.Summary</p>
                 </div>
                 <div class="card-footer">
-                    <a href="/item" class="btn btn-success w-100">Details & Nutrition</a>
+                    <a asp-page="item" asp-route-id="@i.Id" class="btn btn-success w-100">Details & Nutrition2</a>
                 </div>
             </div>
         </div>
