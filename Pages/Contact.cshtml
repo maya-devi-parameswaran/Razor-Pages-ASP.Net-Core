@@ -1,7 +1,7 @@
-﻿@page
-@model Razor_Pages_ASP.Net_Core.Pages.ContactModel
+﻿@page "/thoughts/{token:promo}"
+@model ContactModel
 @{
-     ViewData["Title"] = "Contact";
+    ViewData["Title"] = "Contact";
 }
 
 <div class="container">
@@ -10,39 +10,40 @@
         <small>We'd love to hear from you.</small>
     </h1>
     <hr />
-    @if(!string.IsNullOrEmpty(@Model.Message))
-    {
+    @if (!string.IsNullOrEmpty(Model.Message)) {
         <div class="alert alert-success">@Model.Message</div>
     }
     <div class="row">
         <div class="col-md-8 mb-4">
             <p>Life gets busy but we try to respond with 24 hours.  If you have a more immediate question, give us a ring using the number over on the right. We are crazy friendly!</p>
             <br />
-            <form asp-page="Contact" method="post" name="sentMessage" id="contactForm" novalidate>
+            <form asp-page="Contact" method="post" name="sentMessage" id="contactForm">
                 <div class="control-group form-group">
                     <div class="controls">
-                        <span asp-validation-for="Contact.Name"></span>
                         <label asp-for="Contact.Name">Name:</label>
-                        <input type="text" class="form-control" id="name" asp-for="Contact.Name" required data-validation-required-message="Please enter your name.">
-                        <p class="help-block"></p>
+                        <input asp-for="Contact.Name" class="form-control">
+                        <span asp-validation-for="Contact.Name"></span>
                     </div>
                 </div>
                 <div class="control-group form-group">
                     <div class="controls">
-                        <label>Phone Number:</label>
-                        <input type="tel" class="form-control" id="phone" required data-validation-required-message="Please enter your phone number.">
+                        <label asp-for="Contact.Phone">Phone:</label>
+                        <input asp-for="Contact.Phone" class="form-control">
+                        <span asp-validation-for="Contact.Phone"></span>
                     </div>
                 </div>
                 <div class="control-group form-group">
                     <div class="controls">
-                        <label>Email:</label>
-                        <input type="email" class="form-control" id="email" required data-validation-required-message="Please enter your email address.">
+                        <label asp-for="Contact.Email">Email:</label>
+                        <input asp-for="Contact.Email" class="form-control">
+                        <span asp-validation-for="Contact.Email"></span>
                     </div>
                 </div>
                 <div class="control-group form-group">
                     <div class="controls">
-                        <label>Message:</label>
-                        <textarea rows="10" cols="100" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
+                        <label asp-for="Contact.Message">Message:</label>
+                        <textarea asp-for="Contact.Message" rows="10" cols="100" class="form-control"></textarea>
+                        <span asp-validation-for="Contact.Message"></span>
                     </div>
                 </div>
                 <div id="success"></div>
@@ -51,17 +52,16 @@
         </div>
         <div class="col-md-4">
             <div>
-                <form asp-page-handler="Subscribe">
                 <h3>Keep in Touch</h3>
                 <p>Sign up for our mailing list - no spam, we promise.</p>
-                <div class="control-group form-group">
-                    <input name="address" type="text" class="form-control" placeholder="Email" />
-                </div>
-                <div class="control-group form-group">
-                    <input type="submit" class="btn btn-success" value="Join" />
-                </div>
+                <form asp-page-handler="Subscribe">
+                    <div class="control-group form-group">
+                        <input name="address" type="text" class="form-control" placeholder="Email" />
+                    </div>
+                    <div class="control-group form-group">
+                        <input type="submit" class="btn btn-success" value="Join" />
+                    </div>
                 </form>
-                
             </div>
             <hr />
             <div>

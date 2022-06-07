@@ -7,29 +7,32 @@ namespace Razor_Pages_ASP.Net_Core.Pages
 {
     public class ContactModel : PageModel
     {
-        public string Message { get; set; }
         [BindProperty]
         public Contact Contact { get; set; }
+        public string Message { get; private set; }
+
         public void OnGet()
         {
-            Message = "Your contact page.";
-        }
-        public void OnPost()
-        {
-            if (ModelState.IsValid) 
-            {
-                EmailService.SendEmail(Contact);
-                Message = "Your email has been sent!";
-            }
-          
+
         }
 
-        public void OnPostSubscribe(string address) 
+        public IActionResult OnPost()
         {
-          
+            if (ModelState.IsValid)
+            {
+                EmailService.SendEmail(Contact);
+
+                return RedirectToPage("Confirmation", "Contact");
                 
-                Message = "Joined!";
-           
+            }
+            return Page();
+        }
+
+        public IActionResult OnPostSubscribe(string address)
+        {
+            EmailService.SendEmail(address);
+
+            return RedirectToPage("Confirmation", "Subscribe");
         }
     }
 }

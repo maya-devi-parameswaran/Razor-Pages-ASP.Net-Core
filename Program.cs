@@ -1,7 +1,16 @@
+using Razor_Pages_ASP.Net_Core;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddMvc().AddRazorPagesOptions(options => 
+{ 
+    options.Conventions.AddPageRoute("/index", "home");
+    options.Conventions.AddPageRoute("/index", "home2");
+});
+
+builder.Services.Configure<RouteOptions>(options => { options.ConstraintMap.Add("promo", typeof(PromoConstraint)); });
 
 var app = builder.Build();
 
