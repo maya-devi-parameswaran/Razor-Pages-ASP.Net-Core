@@ -35,14 +35,22 @@
             @RenderBody()
         </main>
     </div>
-    <cache expires-after=@TimeSpan.FromSeconds(10) >
+   @* <cache expires-after=@TimeSpan.FromSeconds(10) >*@
         <footer class="border-top footer text-muted">
-        <div class="container">
+            @if(IsSectionDefined("Footer2"))
+            {
+                RenderSection("Footer2", required: false);
+            }
+            else
+            {
+            <div class="container">
             &copy; 2022 - Razor_Pages_ASP.Net_Core - <a asp-area="" asp-page="/Privacy">Privacy</a>
             @DateTime.Now
-        </div>
+            </div>
+            }
+           
     </footer>
-    </cache>
+ @*   </cache>*@
     
 
     

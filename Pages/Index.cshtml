@@ -26,3 +26,9 @@
        
     }
 </div>
+<div>
+    <partial name="MobileWidget" model=@("Home Page")></partial>
+</div>
+@*@await Component.InvokeAsync("PopularBrews",new {count=2})*@
+
+ <vc:popular-brews count="2"/>
